@@ -1,0 +1,26 @@
+name: Run Shell Script
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # 毎日UTC 00:00に実行（スケジュールの例）
+
+  workflow_dispatch: # 手動実行のトリガー
+    inputs:
+      arg1:
+        description: "arg 1."
+        required: true
+        default: "my name"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run Shell Script
+        run: |
+          chmod +x ./myscript.sh  # スクリプトに実行権限を与える
+          ./myscript.sh         # スクリプトを実行する
+
