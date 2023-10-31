@@ -22,5 +22,5 @@ jobs:
       - name: Run Shell Script
         run: |
           chmod +x ./hello.sh  # スクリプトに実行権限を与える
-          ./hello.sh ${{ inputs.arg1 }} # スクリプトを実行する
+          ./hello.sh "${{ inputs.arg1 }}" # スクリプトを実行する
 
