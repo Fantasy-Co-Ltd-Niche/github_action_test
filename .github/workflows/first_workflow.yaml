@@ -24,6 +24,7 @@ jobs:
           chmod +x ./hello.sh  # スクリプトに実行権限を与える
           ./hello.sh "${{ inputs.arg1 }}" # スクリプトを実行する
 
+jobs:
   run-script2:
     runs-on: ubuntu-latest
 
