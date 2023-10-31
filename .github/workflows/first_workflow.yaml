@@ -24,3 +24,15 @@ jobs:
           chmod +x ./hello.sh  # スクリプトに実行権限を与える
           ./hello.sh "${{ inputs.arg1 }}" # スクリプトを実行する
 
+  run-script2:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run Shell Script
+        run: |
+          chmod +x ./hello.sh  # スクリプトに実行権限を与える
+          ./hello.sh "${{ inputs.arg1 }}" # スクリプトを実行する
+
