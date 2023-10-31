@@ -1,9 +1,6 @@
 name: Run Shell Script
 
 on:
-  schedule:
-    - cron: '0 0 * * *' # 毎日UTC 00:00に実行（スケジュールの例）
-
   workflow_dispatch: # 手動実行のトリガー
     inputs:
       arg1:
