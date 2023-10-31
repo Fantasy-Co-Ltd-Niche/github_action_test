@@ -1,0 +1,26 @@
+name: second workflow
+
+on:
+  workflow_run: 
+    workflows: [Run Shell Script]
+    types:
+      - completed
+
+  workflow_dispatch: # 手動実行のトリガー
+    inputs:
+      arg1:
+        description: "arg 1."
+        required: true
+        default: "my name"
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: second workflow job1
+        run: echo "second workflow job1 completed."
+
